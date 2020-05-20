@@ -39,7 +39,8 @@ public class PactTest {
                         .stringValue("postalCode", "1111")
                         .and("firstName","Vitalik")
                         .stringType("lastName")
-                        .and("position","Admin"))
+                        .and("position","Admin")
+                .and("test","test"))
                 .toPact();
     }
     @PactTestFor(pactMethod = "pactUserExists")

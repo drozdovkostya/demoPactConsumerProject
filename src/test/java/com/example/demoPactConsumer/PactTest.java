@@ -1,6 +1,5 @@
 package com.example.demoPactConsumer;
 
-import au.com.dius.pact.consumer.dsl.DslPart;
 import au.com.dius.pact.consumer.dsl.PactDslJsonBody;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
@@ -9,16 +8,11 @@ import au.com.dius.pact.core.model.RequestResponsePact;
 import au.com.dius.pact.core.model.annotations.Pact;
 import com.example.demoPactConsumer.model.User;
 import com.example.demoPactConsumer.repository.UserRepository;
-import io.pactfoundation.consumer.dsl.LambdaDsl;
-import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.Date;
-import java.time.ZoneId;
-import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,7 +35,7 @@ public class PactTest {
                 .willRespondWith()
                 .status(200)
                 .body(new PactDslJsonBody()
-                        .integerType("age",12)
+                        .integerType("age")
                         .stringValue("postalCode", "1111")
                         .and("firstName","Vitalik")
                         .and("lastName","Johnson")

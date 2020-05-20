@@ -40,7 +40,7 @@ public class PactTest {
                         .and("firstName","Vitalik")
                         .stringType("lastName")
                         .stringType("position")
-                        .stringType("id")
+                        .integerType("id")
                 )
                 .toPact();
     }

@@ -37,7 +37,7 @@ public class PactTest {
                 .body(new PactDslJsonBody()
                         .integerType("age")
                         .stringValue("postalCode", "1111")
-                        .and("firstName","Arnold")
+                        .and("firstName","Albert")
                         .stringType("lastName")
                         .and("position","Admin"))
                 .toPact();

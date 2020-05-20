@@ -47,11 +47,11 @@ public class PactTest {
                         .and("lastName","Johnson")
                         .and("position","Admin"))
                 .toPact();
-
     }
     @PactTestFor(pactMethod = "pactUserExists")
     @Test
     public void userExists() {
+        System.setProperty("providerUrl","http://localhost:8095/findUser/");
         final User user = userServiceRepository.getUserByFirstName("Vitalik");
         assertThat(user.getFirstName().equals("Vitalik"));
     }

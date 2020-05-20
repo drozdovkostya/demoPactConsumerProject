@@ -10,9 +10,9 @@ public class UserRepository {
 
     public User getUserByFirstName(String firstName){
         RestTemplate restTemplate = new RestTemplate();
-        System.getProperty("");
+        String providerUrl = System.getProperty("providerUrl");
         ResponseEntity<User> response
-                = restTemplate.getForEntity( "http://localhost:8095/findUser/"+firstName, User.class);
+                = restTemplate.getForEntity( providerUrl+firstName, User.class);
         return response.getBody();
     }
 }

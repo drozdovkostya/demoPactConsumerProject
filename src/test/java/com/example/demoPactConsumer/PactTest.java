@@ -38,7 +38,7 @@ public class PactTest {
                         .integerType("age")
                         .stringValue("postalCode", "1111")
                         .and("firstName","Arnold")
-                        .and("lastName","Johnson")
+                        .stringType("lastName")
                         .and("position","Admin"))
                 .toPact();
     }

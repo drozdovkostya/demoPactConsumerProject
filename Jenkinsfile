@@ -37,11 +37,11 @@ pipeline {
 //                    }}
 //             }
 //       }
-//       stage('Deploy to TST') {
-//           steps{
-//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/tst' --header 'Content-Type: application/json'"
-//             }
-//       }
+      stage('Deploy to TST') {
+          steps{
+              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/tst' --header 'Content-Type: application/json'"
+            }
+      }
 
 //       stage('Can I deploy to ACC') {
 //           steps{
@@ -55,11 +55,11 @@ pipeline {
 //             }
 //       }
 
-//       stage('Deploy to ACC') {
-//           steps{
-//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/acc' --header 'Content-Type: application/json'"
-//             }
-//       }
+      stage('Deploy to ACC') {
+          steps{
+              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/acc' --header 'Content-Type: application/json'"
+            }
+      }
 
 //       stage('Can I deploy to PRD') {
 //           steps{
@@ -73,12 +73,13 @@ pipeline {
 //             }
 //       }
 
-//       stage('Deploy to PRD') {
-//           steps{
-//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/prd' --header 'Content-Type: application/json'"
-//             }
-//       }
+      stage('Deploy to PRD') {
+          steps{
+              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_consumer/versions/$GIT_COMMIT/tags/prd' --header 'Content-Type: application/json'"
+            }
+      }
+
+
+
    }
-
-
 }

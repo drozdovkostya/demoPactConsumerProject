@@ -36,10 +36,10 @@ public class PactTest {
                 .status(200)
                 .body(new PactDslJsonBody()
                         .integerType("age")
-                        .stringValue("postalCode", "1111")
+                        .stringType("postalCode")
                         .and("firstName","Vitalik")
                         .stringType("lastName")
-                        .and("position","Admin"))
+                        .stringType("position"))
                 .toPact();
     }
     @PactTestFor(pactMethod = "pactUserExists")

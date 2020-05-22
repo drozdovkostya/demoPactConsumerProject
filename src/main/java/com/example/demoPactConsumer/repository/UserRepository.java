@@ -12,7 +12,7 @@ public class UserRepository {
         RestTemplate restTemplate = new RestTemplate();
         String providerUrl = System.getProperty("providerUrl");
         ResponseEntity<User> response
-                = restTemplate.getForEntity( providerUrl+firstName, User.class);
+                = restTemplate.getForEntity( providerUrl+"/findUser/"+firstName, User.class);
         return response.getBody();
     }
 }

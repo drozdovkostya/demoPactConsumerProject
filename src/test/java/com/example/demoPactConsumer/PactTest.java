@@ -47,7 +47,7 @@ public class PactTest {
     @PactTestFor(pactMethod = "pactUserExists")
     @Test
     public void userExists() {
-        System.setProperty("providerUrl","http://localhost:8095/findUser/");
+        System.setProperty("providerUrl","http://localhost:8095");
         final User user = userServiceRepository.getUserByFirstName("Vitalik");
         assertThat(user.getFirstName().equals("Vitalik"));
     }
